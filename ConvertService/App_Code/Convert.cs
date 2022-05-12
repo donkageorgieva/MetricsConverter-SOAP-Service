@@ -10,7 +10,7 @@ using System.Web.Services;
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-// [System.Web.Script.Services.ScriptService]
+ [System.Web.Script.Services.ScriptService]
 public class Convert : System.Web.Services.WebService
 {
 
@@ -30,5 +30,16 @@ public class Convert : System.Web.Services.WebService
     public double LbToKg(double lb)
     {
         return lb / 2.2;
+    }
+
+    [WebMethod]
+    public double OunceToGram(double ounce)
+    {
+        return ounce * 28.34952;
+    }
+    [WebMethod]
+    public double GramToOunce(double gram)
+    {
+        return gram / 28.34952;
     }
 }
